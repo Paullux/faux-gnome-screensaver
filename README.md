@@ -8,7 +8,7 @@ Faux GNOME Screensaver (FGS) adds several features to bridge the gap
 between [XScreenSaver][] and GNOME 3:
 
 *   FGS implements GNOME Screensaver's D-Bus interface. This allows, for
-    instance, the **Lock** function in Ubuntu's session menu to
+    instance, the **Lock** function in ArchLinux's session menu to
     correctly trigger XScreenSaver.
 
 *   FGS obeys idle inhibition requests in the GNOME Session Manager.
