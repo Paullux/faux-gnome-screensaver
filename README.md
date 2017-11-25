@@ -1,8 +1,8 @@
 # Faux GNOME Screensaver #
 
 A GNOME compatibility layer for XScreenSaver  
-<https://github.com/jefferyto/faux-gnome-screensaver>  
-v0.3.0
+<https://github.com/Paullux/faux-gnome-screensaver>  
+v0.3.1
 
 Faux GNOME Screensaver (FGS) adds several features to bridge the gap
 between [XScreenSaver][] and GNOME 3:
@@ -25,9 +25,8 @@ between [XScreenSaver][] and GNOME 3:
 *   FGS listens for signals (Lock, Unlock, etc.) from ConsoleKit and
     systemd-logind, and acts appropriately.
 
-The current version is developed for Ubuntu 13.10; it should work for
-earlier versions of Ubuntu, though no testing has been done. Users of
-Ubuntu 12.10 / 13.04 may want to use [v0.2.0][] instead. Feedback (and
+This version is modified for ArchLinux in 2017 november; it should work for
+earlier versions of ArchLinux, though no testing has been done. Feedback (and
 patches) for other distros would also be appreciated.
 
 All bug reports, feature requests and miscellaneous comments are welcome
@@ -36,28 +35,28 @@ at the [project issue tracker][].
 ## Requirements ##
 
 *   XScreenSaver
-*   python-gi and python-dbus
+*   python-gobject and python-dbus
 
 ## Installation ##
 
 1.  Uninstall GNOME Screensaver:
 
-        sudo apt-get remove gnome-screensaver
+        sudo pacman -Rns gnome-screensaver
 
 2.  Install XScreenSaver and dependencies:
 
-        sudo apt-get install xscreensaver xscreensaver-gl-extra xscreensaver-data-extra python-gi python-dbus
+        sudo pacman -S xscreensaver python-gobject python-gobject2 python-dbus
 
 3.  Download the source code (as [zip][] or [tar.gz][]) and extract.
 
 4.  Copy program files into somewhere on your path, e.g.
-    `/usr/local/bin`:
+    `/usr/bin`:
 
-        sudo cp faux-gnome-screensaver.py faux-gnome-screensaver-command.py /usr/local/bin
+        sudo cp faux-gnome-screensaver.py faux-gnome-screensaver-command.py /usr/bin
 
 5.  Make program files executable and link to their non-faux names:
 
-        cd /usr/local/bin
+        cd /usr/bin
         sudo chmod a+x faux-gnome-screensaver.py faux-gnome-screensaver-command.py
         sudo ln -s faux-gnome-screensaver.py gnome-screensaver
         sudo ln -s faux-gnome-screensaver-command.py gnome-screensaver-command
@@ -86,21 +85,19 @@ Based in part on:
 *   The script in a comment for [bug 528094][] by cpaul
 *   XScreenSaver inhibit code from [Caffeine][]
 *   ConsoleKit / systemd-logind listening code from
-    [GNOME Screensaver][] and its [Ubuntu branch][]
+    [GNOME Screensaver][]
 
 ## License ##
 
 Copyright &copy; 2012-2013 Jeffery To <jeffery.to@gmail.com>
+Copyright &copy; 2017 Paul Woisard <paulwoisard@gmail.com>
 
 Available under GNU General Public License version 3
 
 
-[project issue tracker]: https://github.com/jefferyto/faux-gnome-screensaver/issues
-[zip]: https://github.com/jefferyto/faux-gnome-screensaver/archive/master.zip
-[tar.gz]: https://github.com/jefferyto/faux-gnome-screensaver/archive/master.tar.gz
-[v0.2.0]: https://github.com/jefferyto/faux-gnome-screensaver/archive/v0.2.0.zip
+[project issue tracker]: https://github.com/Paullux/faux-gnome-screensaver/issues
+[zip]: https://github.com/Paullux/faux-gnome-screensaver/archive/master.zip
+[tar.gz]: https://github.com/Paullux/faux-gnome-screensaver/archive/master.tar.gz
 [XScreenSaver]: http://www.jwz.org/xscreensaver/
-[Caffeine]: https://launchpad.net/caffeine
-[bug 528094]: https://bugs.launchpad.net/indicator-session/+bug/528094/comments/31
+[Caffeine]: https://extensions.gnome.org/extension/517/caffeine/
 [GNOME Screensaver]: https://git.gnome.org/browse/gnome-screensaver/
-[Ubuntu branch]: https://launchpad.net/ubuntu/+source/gnome-screensaver

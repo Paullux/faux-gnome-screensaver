@@ -84,7 +84,7 @@ class XScreenSaverManager(GObject.GObject):
 		self._active = False
 		self._active_since = datetime.datetime.now()
 		self._locked = False
-		match = re.search(r"screen (\S+) since ([^\(]+)", self._do_command('time'))
+		match = re.search(r"screen (\S+) since ([^\(]+)", (self._do_command('time')).decode('utf-8'))
 		if match:
 			state, date_str = match.groups()
 			self._active = state != 'non-blanked'
@@ -650,13 +650,13 @@ class GSettingsManager(GObject.GObject):
 
 	def activate(self):
 		self._gsettings = {}
-		for key, info in self.SETTINGS.iteritems():
+		for key, info in self.SETTINGS.items():
 			schema = info['schema']
 			if schema not in self._gsettings:
 				self._gsettings[schema] = Gio.Settings(schema)
 
 		self._saved = {}
-		for key, info in self.SETTINGS.iteritems():
+		for key, info in self.SETTINGS.items():
 			schema = info['schema']
 			gsettings = self._gsettings[schema]
 			keys = gsettings.list_keys()
@@ -672,7 +672,7 @@ class GSettingsManager(GObject.GObject):
 
 	def deactivate(self):
 		if self._saved:
-			for key, info in self._saved.iteritems():
+			for key, info in self._saved.items():
 				schema = self.SETTINGS[key]['schema']
 				self._set_setting(key, info['value'])
 				LOG.debug("Disconnecting %s.%s", schema, key)
