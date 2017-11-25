@@ -4,6 +4,8 @@ A GNOME compatibility layer for XScreenSaver
 <https://github.com/Paullux/faux-gnome-screensaver>  
 v0.3.1
 
+I forked the work of [jefferyto/faux-gnome-screensaver] for Ubuntu to ArchLinux
+
 Faux GNOME Screensaver (FGS) adds several features to bridge the gap
 between [XScreenSaver][] and GNOME 3:
 
@@ -89,12 +91,12 @@ Based in part on:
 
 ## License ##
 
-Copyright &copy; 2012-2013 Jeffery To <jeffery.to@gmail.com>
+Copyright &copy; 2012-2013 Jeffery To <jeffery.to@gmail.com>  
 Copyright &copy; 2017 Paul Woisard <paulwoisard@gmail.com>
 
 Available under GNU General Public License version 3
 
-
+[jefferyto/faux-gnome-screensaver]: https://github.com/jefferyto/faux-gnome-screensaver
 [project issue tracker]: https://github.com/Paullux/faux-gnome-screensaver/issues
 [zip]: https://github.com/Paullux/faux-gnome-screensaver/archive/master.zip
 [tar.gz]: https://github.com/Paullux/faux-gnome-screensaver/archive/master.tar.gz
