@@ -1,4 +1,4 @@
-# Faux GNOME Screensaver #
+# Faux GNOME Screensaver For ArchLinux #
 
 A GNOME compatibility layer for XScreenSaver  
 <https://github.com/Paullux/faux-gnome-screensaver>  
